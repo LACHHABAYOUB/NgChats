@@ -1,0 +1,16 @@
+<form>
+  <mat-form-field appearance="outline" color="accent">
+    <mat-icon matSuffix>person</mat-icon>
+    <input matInput placeholder="Screen Name" #user>
+  </mat-form-field>
+  <mat-card>
+    <mat-selection-list #rooms [multiple]="false">
+      <mat-list-option *ngFor="let room of chatRooms" [value]="room">
+        {{room}}
+      </mat-list-option>
+    </mat-selection-list>
+  </mat-card>
+
+  <button mat-flat-button color="primary" style="margin-top: .5em; margin-right: 0; float: right"
+    (click)="registerUser(user.value, rooms.selectedOptions.selected[0]?.value, $event)">Register</button>
+</form>

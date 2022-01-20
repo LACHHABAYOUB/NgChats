@@ -1,0 +1,13 @@
+GET https://us-central1-pka-forms-fef14.cloudfunctions.net/getMessages?room=Fun%20with%20Taxes
+
+####
+POST https://us-central1-pka-forms-fef14.cloudfunctions.net/setMessage/
+
+Content-Type: application/json
+{
+  "message":"hello this is brad in class 2022-01-20",
+  "timestamp":"2022-01-20T20:49:51.495Z",
+  "chatRoom":"Mystic-1-4-U",
+  "screenName":"Alex Test Data"
+}
+

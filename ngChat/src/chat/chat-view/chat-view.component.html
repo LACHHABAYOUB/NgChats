@@ -1,0 +1,50 @@
+<form>
+  <div>
+    <mat-form-field appearance="outline" color="accent">
+      <mat-icon matSuffix>person</mat-icon>
+      <input matInput placeholder="Chat Message" #msg>
+    </mat-form-field>
+
+    <button mat-flat-button color="primary" (click)="sendChatMessage(msg.value, $event)">Send</button>
+  </div>
+  <!-- <mat-card> -->
+  <!-- <mat-selection-list #rooms [multiple]="false">
+      <mat-list-option *ngFor="let room of chatRooms" [value]="room">
+        {{room}}
+      </mat-list-option>
+    </mat-selection-list> -->
+  <!-- </mat-card> -->
+
+  <div>
+    <mat-accordion>
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            User Name
+          </mat-panel-title>
+          <mat-panel-description>
+            Message
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <!-- chats go here -->
+        <!-- <div style="display:flex" *ngFor="let userChat of userChats">
+          <p>{{userChat.screenName}}</p>
+          <p style="margin-left: 33%;">{{userChat.message}}</p>
+        </div> -->
+
+        <app-conversation *ngFor="let userChat of userChats" [user]="userChat"></app-conversation>
+      </mat-expansion-panel>
+      <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+          <!-- <mat-panel-title>
+            Self aware panel
+          </mat-panel-title> -->
+          <mat-panel-description>
+            {{panelOpenState ? 'open' : 'closed'}}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+
+</form>

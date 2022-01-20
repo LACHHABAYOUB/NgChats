@@ -1,0 +1,17 @@
+.link {
+  display: flex;
+  a {
+    margin-left: 1em;
+    text-decoration: none;
+    color: #fff;
+  }
+}
+
+.main {
+  margin: 2em;
+}
+
+.mat-toolbar {
+  display: flex;
+  justify-content: space-between;
+}
